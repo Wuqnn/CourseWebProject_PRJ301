@@ -46,6 +46,23 @@ public User(){}
         this.lastLogin = lastLogin;
     }
 
+    public User(Integer userId, String email, String passwordHash, int roleID, String fullName, String phoneNumber, String avatarUrl, Boolean isEmailVerified, Boolean isActive) {
+        this.userId = userId;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.roleID = roleID;
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.avatarUrl = avatarUrl;
+        this.isEmailVerified = isEmailVerified;
+        this.isActive = isActive;
+    }
+
+    
+
+    
+    
+
     public Integer getUserId() {
         return userId;
     }
