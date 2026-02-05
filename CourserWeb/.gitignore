@@ -1,0 +1,58 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IntelliJ IDEA
+/.idea/
+*.iml
+out/
+
+# NetBeans / Ant
+/build/
+dist/
+nbproject/private/
+nbbuild/
+nbsrc/
+
+# Java build artifacts
+*.class
+*.jar
+*.war
+*.ear
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IDE/editor swap, backup, and temp files
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+
+# Temporary and distribution files
+tmp/
+temp/
+logs/
+
+# Dependency folders (if present)
+node_modules/
+.vscode/
+
+# Database / local secrets
+*.db
+*.sql
+*.sqlite
+.env
+
+/target/

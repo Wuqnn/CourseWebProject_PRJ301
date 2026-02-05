@@ -21,7 +21,8 @@ public class User {
     private int roleID;     // Mapping từ RoleID sang tên cho dễ dùng
 
     // 3. Shared Info (Thông tin chung)
-    private String fullName;
+    private String firstName;
+    private String lastName;
     private String phoneNumber;
     private String avatarUrl;
 
@@ -31,13 +32,14 @@ public class User {
     private LocalDateTime createdAt;
     private LocalDateTime lastLogin; 
 public User(){}
-    
-    public User(Integer userId, String email, String passwordHash, int roleID, String fullName, String phoneNumber, String avatarUrl, Boolean isEmailVerified, Boolean isActive, LocalDateTime createdAt, LocalDateTime lastLogin) {
+
+    public User(Integer userId, String email, String passwordHash, int roleID, String firstName, String lastName, String phoneNumber, String avatarUrl, Boolean isEmailVerified, Boolean isActive, LocalDateTime createdAt, LocalDateTime lastLogin) {
         this.userId = userId;
         this.email = email;
         this.passwordHash = passwordHash;
         this.roleID = roleID;
-        this.fullName = fullName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.avatarUrl = avatarUrl;
         this.isEmailVerified = isEmailVerified;
@@ -45,23 +47,6 @@ public User(){}
         this.createdAt = createdAt;
         this.lastLogin = lastLogin;
     }
-
-    public User(Integer userId, String email, String passwordHash, int roleID, String fullName, String phoneNumber, String avatarUrl, Boolean isEmailVerified, Boolean isActive) {
-        this.userId = userId;
-        this.email = email;
-        this.passwordHash = passwordHash;
-        this.roleID = roleID;
-        this.fullName = fullName;
-        this.phoneNumber = phoneNumber;
-        this.avatarUrl = avatarUrl;
-        this.isEmailVerified = isEmailVerified;
-        this.isActive = isActive;
-    }
-
-    
-
-    
-    
 
     public Integer getUserId() {
         return userId;
@@ -95,12 +80,20 @@ public User(){}
         this.roleID = roleID;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPhoneNumber() {
@@ -119,20 +112,20 @@ public User(){}
         this.avatarUrl = avatarUrl;
     }
 
-    public Boolean getIsEmailVerified() {
+    public Boolean getEmailVerified() {
         return isEmailVerified;
     }
 
-    public void setIsEmailVerified(Boolean isEmailVerified) {
-        this.isEmailVerified = isEmailVerified;
+    public void setEmailVerified(Boolean emailVerified) {
+        isEmailVerified = emailVerified;
     }
 
-    public Boolean getIsActive() {
+    public Boolean getActive() {
         return isActive;
     }
 
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -150,6 +143,4 @@ public User(){}
     public void setLastLogin(LocalDateTime lastLogin) {
         this.lastLogin = lastLogin;
     }
-
-    
 }
