@@ -42,7 +42,7 @@ public class LoginController extends HttpServlet {
 
             String URL = "";
             if (udto != null) {
-                URL = "success.jsp";
+                URL = "dashboard.jsp";
                 request.getSession().setAttribute("User", udto);
             } else {
                 URL = "login.jsp"; 

@@ -56,10 +56,10 @@ public class RegisterController extends HttpServlet {
             
             boolean success = dao.insertRegister(u);
             if(success){
-                //Mo trang success.jsp
+                //Mo trang dashboard.jsp
                 HttpSession session = request.getSession();
                 session.setAttribute("User", u);
-                request.getRequestDispatcher("success.jsp").forward(request, response);
+                request.getRequestDispatcher("dashboard.jsp").forward(request, response);
             }else{
                 String error = "Registration failed. Please try again.";
                 request.setAttribute("ERROR", error);

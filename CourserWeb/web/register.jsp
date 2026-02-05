@@ -27,7 +27,7 @@
             }
         %>
 
-        <form action="regist" method="post" id="registerForm" onsubmit="return validateFrom()">
+        <form action="MainController" id="registerForm" onsubmit="return validateFrom()">
 
             <div class="form-group">
                 <label for="email" class="form-label">Email</label>
@@ -70,7 +70,7 @@
                 <small id="phoneError" style="color: #e74c3c"></small>
             </div>
 
-            <button type="submit" class="btn-primary">Đăng Ký</button>
+            <button type="submit" value="register" name="action" class="btn-primary">Đăng Ký</button>
         </form>
         <script>
             function validateFrom() {
@@ -143,7 +143,7 @@
         </script>
 
         <div class="register-footer">
-            Đã có tài khoản? <a href="login.jsp" class="login-link">Đăng nhập ngay</a>
+            Đã có tài khoản? <a href="MainController?action=HOME" class="login-link">Đăng nhập ngay</a>
         </div>
     </div>
 </div>
