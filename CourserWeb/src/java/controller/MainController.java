@@ -6,6 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Lớp này dùng để điều phối các request dựa trên tham số "action" gửi lên từ client
+ * Tùy vào giá trị của "action", request sẽ được chuyển tiếp (forward) đến các servlet hoặc trang JSP tương ứng
+ * @author admin
+ */
 public class MainController extends HttpServlet {
 
     public void processRequest(HttpServletRequest request, HttpServletResponse response){
@@ -13,6 +18,7 @@ public class MainController extends HttpServlet {
         try{
             //lay value cua nut submit
             String ac=request.getParameter("action");
+            //neu ac null thi gan mac dinh la HOME
             if(ac==null){
                 ac="HOME";
             }
@@ -21,16 +27,13 @@ public class MainController extends HttpServlet {
                     url="login.jsp";
                     break;
                 case "login":
-                    url="LoginController";
+                    url="LoginController"; //forward den LoginController de xu ly
                     break;
                 case "register":
-                    url="RegisterController";
+                    url="RegisterController"; //forward den RegisterController de xu ly
                     break;
                 case "logout":
-                    url="LogoutController";
-                    break;
-                case "search":
-                    url="SearchController";
+                    url="LogoutController"; //forward den LogoutController de xu ly
                     break;
             }
         }catch(Exception e){

@@ -26,7 +26,7 @@
         <%
             }
         %>
-
+        <%-- action="MainController": request MainController để yêu cầu xử lí  --%>
         <form action="MainController" id="registerForm" onsubmit="return validateFrom()">
 
             <div class="form-group">
@@ -69,7 +69,7 @@
                 <input type="text" id="phone" name="phone" class="form-input">
                 <small id="phoneError" style="color: #e74c3c"></small>
             </div>
-
+            <%-- biến action có value là register --%>
             <button type="submit" value="register" name="action" class="btn-primary">Đăng Ký</button>
         </form>
         <script>
