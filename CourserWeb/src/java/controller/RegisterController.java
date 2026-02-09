@@ -46,6 +46,14 @@ public class RegisterController extends HttpServlet {
             String role = request.getParameter("role");
             int roleID = Integer.parseInt(role);
             
+            
+            if (dao.emailExist(email)) {
+                  request.setAttribute("EmailExist", "Email already exist");
+                  request.getRequestDispatcher("register.jsp").forward(request, response);
+                  return;
+                  
+              }
+            
             User u = new User();
             u.setEmail(email);
             u.setPasswordHash(password);
