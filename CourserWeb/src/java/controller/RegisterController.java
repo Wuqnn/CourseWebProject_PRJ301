@@ -41,12 +41,22 @@ public class RegisterController extends HttpServlet {
             String role = request.getParameter("role");
             int roleID = Integer.parseInt(role);
             
+            RegisterDAO rdao = new RegisterDAO();
+              if (dao.emailExist(email)) {
+                  request.setAttribute("Error", "Email already exist");
+                  request.getRequestDispatcher("register.jsp").forward(request, response);
+                  return;
+                  
+              }
+            
             User u = new User();
             u.setEmail(email);
             u.setPasswordHash(password);
             u.setFullName(fullName);
             u.setPhoneNumber(phone);
             u.setRoleID(roleID);
+            
+            
             
             boolean success = dao.insertRegister(u);
             if(success){

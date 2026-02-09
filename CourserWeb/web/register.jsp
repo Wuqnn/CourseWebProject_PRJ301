@@ -1,4 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="vi">
     <head>
@@ -31,21 +33,22 @@
 
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" id="email" name="email" class="form-input">
+                        <input type="text" id="email" name="email" class="form-input" value="${param.email}">
                         <small id="emailError" style="color: #e74c3c"></small>
+                        <small class="error" style="color: #e74c3c"> ${Error} </small>
                     </div>
 
 
                     <div class="form-group">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" id="password" name="password" class="form-input" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{1,6}$">
+                        <input type="password" id="password" name="password" class="form-input">
                         <small id="passwordError" style="color: #e74c3c"></small>
                     </div>
 
 
                     <div class="form-group">
                         <label for="name" class="form-label">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-input" pattern="^[A-Za-z]+$">
+                        <input type="text" id="name" name="name" class="form-input">
                         <small id="nameError" style="color: #e74c3c"></small>
                     </div>
 
@@ -85,8 +88,8 @@
                         phoneError.innerText = "";
                         
                         let emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-                        let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{1,6}$/;
-                        let namePattern = /^[A-Za-zÀ-ỹ\s]+$/;
+                        let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{1,8}$/;
+                        let namePattern = /^[A-Za-zÀ-ỹ]+( [A-Za-zÀ-ỹ]+)*$/;
                         let phonePattern = /^\d{10}$/;
 
                         //mail
