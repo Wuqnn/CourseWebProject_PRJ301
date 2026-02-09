@@ -13,14 +13,16 @@
     </head>
     <body>
         <h1>LOGIN</h1>
-        <form action="LoginController" method="post" onsubmit="return validateForm()">
+        <%-- action="MainController": request MainController để yêu cầu xử lí  --%>
+        <form action="MainController" onsubmit="return validateForm()">
             <p><input type="text" id="email" name="email" placeholder="Email">
                 <small id="emailError" style="color: #e74c3c" ></small>
-            </p>        
+            </p>
             <p><input type="password" id="password" name="password" placeholder="Password">
                 <small id="passwordError" style="color: #e74c3c" ></small>
             </p>
-            <p><input type="submit" value="Login"></p>
+            <p><input type="submit" value="login" name="action"></p>
+            <%-- biến action có value là login  --%>
         </form>
         <script>
             function validateForm() {

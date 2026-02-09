@@ -29,11 +29,14 @@ public class LoginDAO {
                         rs.getString("Email"),
                         rs.getString("PasswordHash"),
                         rs.getInt("RoleID"),
-                        rs.getString("FullName"),
+                        rs.getString("FirstName"),
+                        rs.getString("LastName"),
                         rs.getString("PhoneNumber"),
-                        rs.getString("AvatarURL"),
+                        rs.getString("AvatarUrl"),
                         rs.getBoolean("IsEmailVerified"),
-                        rs.getBoolean("PasswordHash")
+                        rs.getBoolean("IsActive"),
+                        rs.getObject("CreatedAt", java.time.LocalDateTime.class),
+                        rs.getObject("LastLogin", java.time.LocalDateTime.class)
                 );
 
             }

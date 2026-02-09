@@ -12,10 +12,21 @@
     <title>Title</title>
 </head>
 <body>
+<meta charset="UTF-8">
+
 <%
     User u = (User) session.getAttribute("User");
-    String name = u.getFullName();
+    String name = u.getFirstName();
+    String error = (String) request.getAttribute("errorMessage");
+    if(error != null){
 %>
-<h3>Hello <%= name %></h3>
+    <h3 style="color:red;"><%= error %></h3>
+<%
+    }else{
+%>
+    <h3>Hello <%= name %></h3>
+<%
+    }
+%>
 </body>
 </html>

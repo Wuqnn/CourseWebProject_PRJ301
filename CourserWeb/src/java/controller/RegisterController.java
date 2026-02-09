@@ -32,10 +32,15 @@ public class RegisterController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        request.setCharacterEncoding("UTF-8"); // Đặt mã hóa cho request, nếu có dữ liệu đầu vào là Unicode thì sẽ không bị lỗi
+        response.setContentType("text/html;charset=UTF-8"); // Đặt mã hóa cho response, nếu có dữ liệu đầu ra là Unicode thì sẽ không bị lỗi
+        response.setCharacterEncoding("UTF-8"); // khác với cái trên ở chỗ này đặt mã hóa cho chính response, vdi như bạn in ra bằng PrintWriter thì sẽ không bị lỗi
           try{
             String email = request.getParameter("email");
             String password = request.getParameter("password");
-            String fullName = request.getParameter("name");
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
             String phone = request.getParameter("phone");
             RegisterDAO dao = new RegisterDAO();
             String role = request.getParameter("role");
@@ -44,16 +49,17 @@ public class RegisterController extends HttpServlet {
             User u = new User();
             u.setEmail(email);
             u.setPasswordHash(password);
-            u.setFullName(fullName);
+            u.setFirstName(firstName);
+            u.setLastName(lastName);
             u.setPhoneNumber(phone);
             u.setRoleID(roleID);
             
             boolean success = dao.insertRegister(u);
             if(success){
-                //Mo trang success.jsp
+                //Mo trang dashboard.jsp
                 HttpSession session = request.getSession();
-                session.setAttribute("REGISTER", u);
-                request.getRequestDispatcher("success.jsp").forward(request, response);
+                session.setAttribute("User", u);
+                request.getRequestDispatcher("dashboard.jsp").forward(request, response);
             }else{
                 String error = "Registration failed. Please try again.";
                 request.setAttribute("ERROR", error);
