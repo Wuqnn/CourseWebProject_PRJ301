@@ -13,7 +13,7 @@
 </head>
 <body>
 <%
-    User u = (User) session.getAttribute("REGISTER");
+    User u = (User) session.getAttribute("User");
     String name = u.getFullName();
 %>
 <h3>Hello <%= name %></h3>
