@@ -20,6 +20,7 @@
                     String error = (String) request.getAttribute("ERROR");
                     if (error != null) {
                 %>
+
                 <div class="error-message">
                     <%= error%>
                 </div>
@@ -27,14 +28,14 @@
                     }
                 %>
                 <%-- action="MainController": request MainController để yêu cầu xử lí  --%>
-                <form action="MainController" id="registerForm" onsubmit="return validateFrom()">
+                <form action="MainController" method="post" id="registerForm" onsubmit="return validateFrom()">
 
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
                         <input type="text" id="email" name="email" class="form-input" value="${param.email}">
                         <small id="emailError" style="color: #e74c3c"></small>
                         <small style="color:#e74c3c">
-                            ${emailExistError}
+                            ${EmailExist}
                         </small>
 
                     </div>

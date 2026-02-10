@@ -24,9 +24,9 @@ public class DBUtils {
         Connection conn = null;
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         //String url = "jdbc:sqlserver://localhost:1433;databaseName=" + DB_NAME;
-        // url này là dùng để test bên mac
 
-        String url = "jdbc:sqlserver://192.168.100.38:1433;"
+        // url này là dùng để test bên mac
+        String url = "jdbc:sqlserver://192.168.1.8:1433;"
                 + "databaseName=" + DB_NAME + ";"
                 + "encrypt=true;" // Bật mã hóa
                 + "trustServerCertificate=true;";
