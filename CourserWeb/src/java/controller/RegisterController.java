@@ -48,31 +48,31 @@ public class RegisterController extends HttpServlet {
             
             
             if (dao.emailExist(email)) {
-                  request.setAttribute("EmailExist", "Email already exist");
+                  request.setAttribute("EmailExist", "Email already exist, Enter another email");
                   request.getRequestDispatcher("register.jsp").forward(request, response);
                   return;
-                  
               }
-            
-            User u = new User();
-            u.setEmail(email);
-            u.setPasswordHash(password);
-            u.setFirstName(firstName);
-            u.setLastName(lastName);
-            u.setPhoneNumber(phone);
-            u.setRoleID(roleID);
-            
-            boolean success = dao.insertRegister(u);
-            if(success){
-                //Mo trang dashboard.jsp
-                HttpSession session = request.getSession();
-                session.setAttribute("User", u);
-                request.getRequestDispatcher("dashboard.jsp").forward(request, response);
-            }else{
-                String error = "Registration failed. Please try again.";
-                request.setAttribute("ERROR", error);
-                request.getRequestDispatcher("register.jsp").forward(request, response);
-            }
+
+
+                User u = new User();
+                u.setEmail(email);
+                u.setPasswordHash(password);
+                u.setFirstName(firstName);
+                u.setLastName(lastName);
+                u.setPhoneNumber(phone);
+                u.setRoleID(roleID);
+
+                boolean success = dao.insertRegister(u);
+                if(success){
+                    //Mo trang dashboard.jsp
+                    HttpSession session = request.getSession();
+                    session.setAttribute("User", u);
+                    request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+                }else{
+                    String error = "Registration failed. Please try again.";
+                    request.setAttribute("ERROR", error);
+                    request.getRequestDispatcher("register.jsp").forward(request, response);
+                }
 
         }catch(NumberFormatException e){
             System.out.print("Invalid email format. Email should be a number." + e.getMessage());

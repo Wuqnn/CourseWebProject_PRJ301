@@ -23,13 +23,13 @@ public class DBUtils {
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Connection conn = null;
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        //String url = "jdbc:sqlserver://localhost:1433;databaseName=" + DB_NAME;
-        // url này là dùng để test bên mac
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=" + DB_NAME;
 
-        String url = "jdbc:sqlserver://192.168.100.38:1433;"
-                + "databaseName=" + DB_NAME + ";"
-                + "encrypt=true;" // Bật mã hóa
-                + "trustServerCertificate=true;";
+//        // url này là dùng để test bên mac
+//        String url = "jdbc:sqlserver://192.168.1.8:1433;"
+//                + "databaseName=" + DB_NAME + ";"
+//                + "encrypt=true;" // Bật mã hóa
+//                + "trustServerCertificate=true;";
 
         conn = DriverManager.getConnection(url, DB_USER_NAME, DB_PASSWORD);
         return conn;

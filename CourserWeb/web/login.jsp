@@ -14,7 +14,7 @@
     <body>
         <h1>LOGIN</h1>
         <%-- action="MainController": request MainController để yêu cầu xử lí  --%>
-        <form action="MainController" onsubmit="return validateForm()">
+        <form action="MainController" method="post" onsubmit="return validateForm()">
             <p><input type="text" id="email" name="email" placeholder="Email">
                 <small id="emailError" style="color: #e74c3c" ></small>
             </p>
