@@ -48,7 +48,7 @@ public class RegisterController extends HttpServlet {
             
             
             if (dao.emailExist(email)) {
-                  request.setAttribute("EmailExist", "Email already exist, Enter another email");
+                  request.setAttribute("EmailExist", "Email already exist!");
                   request.getRequestDispatcher("register.jsp").forward(request, response);
                   return;
               }
