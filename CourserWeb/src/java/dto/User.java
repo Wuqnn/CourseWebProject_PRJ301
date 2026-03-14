@@ -47,6 +47,7 @@ public User(){}
         this.createdAt = createdAt;
         this.lastLogin = lastLogin;
     }
+    
 
     public Integer getUserId() {
         return userId;

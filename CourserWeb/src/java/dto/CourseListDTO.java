@@ -1,72 +1,73 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dto;
 
 import java.sql.Date;
 
-/**
- *
- * @author Windows
- */
 public class CourseListDTO {
-    /*[InstructorID]
-      ,[CategoryID]
-      ,[Title]
-      ,[Description]
-      ,[Price]
-      ,[ThumbnailURL]
-      ,[Status]
-      ,[CreatedAt]
-      ,[UpdatedAt]
-*/
-    private String courseID;
-    private String instructorID;
-    private String categoryID;
+
+    private int courseID;
+    private int instructorID;
+    private int categoryID;
     private String title;
     private String description;
-    private Double price;
+    private double price;
+    private String thumbnailURL;
     private Date createdAt;
-    private Date updateAt;
+    private Date updatedAt;
     private String status;
 
-    public CourseListDTO(String courseID, String instructorID, String categoryID, String title, String description, Double price, Date createdAt, Date updateAt, String status) {
+    public CourseListDTO() {
+    }
+
+    public CourseListDTO(int courseID, int instructorID, int categoryID,
+            String title, String description, double price,
+            String thumbnailURL, Date createdAt, Date updatedAt, String status) {
+
         this.courseID = courseID;
         this.instructorID = instructorID;
         this.categoryID = categoryID;
         this.title = title;
         this.description = description;
         this.price = price;
+        this.thumbnailURL = thumbnailURL;
         this.createdAt = createdAt;
-        this.updateAt = updateAt;
+        this.updatedAt = updatedAt;
         this.status = status;
     }
 
+    public CourseListDTO(int courseID, int instructorID, int categoryID, String title, String description, double price, String thumbnailURL, String status) {
+        this.courseID = courseID;
+        this.instructorID = instructorID;
+        this.categoryID = categoryID;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.thumbnailURL = thumbnailURL;
+        this.status = status;
+    }
+    
     
 
-    public String getCourseID() {
+    public int getCourseID() {
         return courseID;
     }
 
-    public void setCourseID(String courseID) {
+    public void setCourseID(int courseID) {
         this.courseID = courseID;
     }
-       
 
-    public String getInstructorID() {
+    public int getInstructorID() {
         return instructorID;
     }
 
-    public void setInstructorID(String instructorID) {
+    public void setInstructorID(int instructorID) {
         this.instructorID = instructorID;
     }
 
-    public String getCategoryID() {
+    public int getCategoryID() {
         return categoryID;
     }
 
-    public void setCategoryID(String categoryID) {
+    public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
 
@@ -86,12 +87,20 @@ public class CourseListDTO {
         this.description = description;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getThumbnailURL() {
+        return thumbnailURL;
+    }
+
+    public void setThumbnailURL(String thumbnailURL) {
+        this.thumbnailURL = thumbnailURL;
     }
 
     public Date getCreatedAt() {
@@ -102,12 +111,12 @@ public class CourseListDTO {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdateAt() {
-        return updateAt;
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdateAt(Date updateAt) {
-        this.updateAt = updateAt;
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public String getStatus() {
@@ -117,7 +126,5 @@ public class CourseListDTO {
     public void setStatus(String status) {
         this.status = status;
     }
-    
-    
-    
+
 }
