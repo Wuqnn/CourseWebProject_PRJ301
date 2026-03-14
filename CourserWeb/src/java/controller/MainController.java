@@ -35,6 +35,13 @@ public class MainController extends HttpServlet {
                 case "logout":
                     url="LogoutController"; //forward den LogoutController de xu ly
                     break;
+                case "courselist":
+                    url="CourseListController";
+                    break;
+                case "usermanager":
+                    url = "UserListController";
+                case "coursemanager":
+                    url = "AdminCourseListController";
             }
         }catch(Exception e){
             e.printStackTrace();
